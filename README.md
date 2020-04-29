@@ -11,13 +11,13 @@ The Dockerfile can be used to create an image that contains all the dependencies
 You can build a Docker image like this:
 
 ```
-docker build -t mesosphere/vendor-ansible .
+make build
 ```
 
 Once the image is built, modify `ansible-version.txt` with your desired Ansible version and run the following to obtain a vendored Ansible package:
 
 ```
-docker run --rm -v $(pwd):/vendor-ansible -w /vendor-ansible mesosphere/vendor-ansible make
+make
 ```
 
 A file named `ansible.tar.gz` will be created in the local directory, containing all the vendored Ansible files.

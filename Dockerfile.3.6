@@ -1,0 +1,9 @@
+FROM python:3.6.10-slim-buster
+
+RUN apt-get update && \
+    apt-get install -y gcc openssl libssl-dev libffi-dev && \
+    apt-get autoclean && \
+    rm -rf /var/lib/apt/lists/*
+
+RUN pip3 install --upgrade setuptools --user
+
